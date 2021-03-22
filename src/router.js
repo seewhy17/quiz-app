@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from 'vue-router'
+import { createWebHistory, createWebHashHistory, createRouter } from 'vue-router'
 
 const NotFound = () =>
   import(
@@ -36,13 +36,14 @@ const routes = [
   },
   {
     path: '/quiz',
-    name: 'qquiz',
+    name: 'quiz',
     component: AssessmentQuiz
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  // history: createWebHistory(),
+  history: createWebHashHistory(),
   scrollBehavior: () => ({
     y: 0
   }),
